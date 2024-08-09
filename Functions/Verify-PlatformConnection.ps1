@@ -45,7 +45,7 @@ function global:Verify-PlatformConnection
                 }
             }# if ($global:LastWhoamicheck)
             
-            $uri = ("https://{0}/identity/api/Security/whoami" -f $global:PlatformConnection.PodFqdn)
+            $uri = ("https://{0}/identity/UserMgmt/GetUserInfo" -f $global:PlatformConnection.PodFqdn)
 
             # calling Security/whoami
             $WhoamiResponse = Invoke-RestMethod -Method Post -Uri $uri @global:PlatformSessionInformation
